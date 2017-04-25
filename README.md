@@ -1,2 +1,25 @@
-# inferno-milligram-boilerplate
-Minimal boilerplate for the web using the latest technologies
+# Inferno-Milligram Boilerplate
+Welcome to another "lightweight", "modern" front-end boilerplate.
+
+# Initials
+- Install
+```
+npm install
+```
+- Run
+```
+npm start
+```
+then go to [http://localhost:3000/](http://localhost:3000/) to see your progress
+- Build
+```
+npm run build
+```
+
+# Learn
+To learn more about Inferno and Milligram here's their official documentations
+- [Inferno documentation](https://infernojs.org/docs/)
+- [Milligram documentation](http://milligram.io/#getting-started)
+
+# Finally
+Any suggestion/contribution is welcomed, happy coding!.
