@@ -15,6 +15,7 @@ then go to [http://localhost:3000/](http://localhost:3000/) to see your progress
 ```
 npm run build
 ```
+build files will be located at `dist` directory/folder
 
 # Learn
 To learn more about Inferno and Milligram here's their official documentations
