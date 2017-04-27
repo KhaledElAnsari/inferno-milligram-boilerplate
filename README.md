@@ -22,5 +22,9 @@ To learn more about Inferno and Milligram here's their official documentations
 - [Inferno documentation](https://infernojs.org/docs/)
 - [Milligram documentation](http://milligram.io/#getting-started)
 
+# TODO
+- Add unit testing
+- Add UI/E2E testing
+
 # Finally
 Any suggestion/contribution is welcomed, happy coding!.
