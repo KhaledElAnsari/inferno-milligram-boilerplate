@@ -39,7 +39,15 @@ var config = {
             },
             {
                 "test": /\.css$/,
-                "use": ExtractTextPlugin.extract(["css-loader",])
+                "use": ExtractTextPlugin.extract([
+                    {
+                        "loader": "css-loader",
+                        "options": {
+                            "sourceMap": true,
+                            "minimize": isProd
+                        }
+                    },
+                ])
             },
         ]
     },
