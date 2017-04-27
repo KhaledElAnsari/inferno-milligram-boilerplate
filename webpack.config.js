@@ -1,27 +1,40 @@
-const path = require('path');
+// Node.js modules
+const path = require("path");
+
+// Webpack plugins
 const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
+// Environment variables
+const ENV = process.env.npm_lifecycle_event;
+const isProd = ENV === "build";
 
-module.exports = {
+
+var config = {
+    devtool: isProd ? "source-map" : "eval-source-map",
+
+    resolve: {
+        "extensions": [".js", ".json", ".css", ".html"]
+    },
+    
     entry: {
-        "app": ['./src/app/app.js'],
-        "styles": ['./src/styles.css']
+        "app": ["./src/app/app.js"],
+        "styles": ["./src/styles.css"]
     },
     
     
     output: {
-        path: path.join(process.cwd(), "dist"),
-        filename: '[name].[hash].js'
+        path: isProd ? path.join(process.cwd(), "dist") : path.join(process.cwd(), "dist-dev"),
+        filename: "[name].[hash].js"
     },
     
     module: {
         loaders: [
             {
               test: /\.js$/,
-              loader: 'babel-loader',
+              loader: "babel-loader",
               exclude: /node_modules/
             },
             {
@@ -35,16 +48,25 @@ module.exports = {
         new ExtractTextPlugin("vendor.[hash].css"),
 
         new HtmlWebpackPlugin({
-            template: './index.html',
-            filename: 'index.html',
-            inject: 'body'
+            template: "./index.html",
+            filename: "index.html",
+            inject: "body"
         }),
       
-        new CopyWebpackPlugin([
-          {
+        new CopyWebpackPlugin([{
             from: "./src/assets",
             to: "assets"
-          }
-        ])
+        }]),
     ]
+};
+
+if(isProd) {
+    const UglifyJsPlugin = require("webpack/lib/optimize/UglifyJsPlugin");
+    const NoEmitOnErrorsPlugin = require("webpack/lib/NoEmitOnErrorsPlugin");
+    const OptimizeJsPlugin = require("optimize-js-plugin");
+    Array.prototype.push.apply(config.plugins, [new UglifyJsPlugin(),
+                                                new NoEmitOnErrorsPlugin(),
+                                                new OptimizeJsPlugin()]);
 }
+
+module.exports = config;
