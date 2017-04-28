@@ -1,13 +1,14 @@
 {
-  "name": "zaid-cv",
+  "name": "inferno-milligram-boilerplate",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "a lightweight minimal boilerplate using Inferno JS and Milligram CSS",
+  "author": "khaled <khaledelansari@gmail.com>",
+  "main": "",
   "scripts": {
     "clean": "rimraf ./dist",
     "clean:dev": "rimraf ./dist-dev",
-    "build": "npm run clean && webpack",
-    "build:dev": "npm run clean:dev && webpack",
+    "build": "npm run clean && webpack --progress --profile --bail",
+    "build:dev": "npm run clean:dev && webpack --progress --profile",
     "start": "webpack-dev-server --host 0.0.0.0 --port=3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
