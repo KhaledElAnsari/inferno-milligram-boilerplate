@@ -2,6 +2,10 @@
 Welcome to another "lightweight", "modern" front-end boilerplate.
 
 # Initials
+- Clone repository
+```
+git clone --depth 1 https://github.com/KhaledElAnsari/inferno-milligram-boilerplate.git
+```
 - Install
 ```
 npm install
