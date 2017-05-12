@@ -3,31 +3,38 @@ Welcome to another "lightweight", "modern" front-end boilerplate.
 
 # Initials
 - Clone repository
-```
-git clone --depth 1 https://github.com/KhaledElAnsari/inferno-milligram-boilerplate.git
-```
+    ```
+    git clone --depth 1 https://github.com/KhaledElAnsari/inferno-milligram-boilerplate.git
+    ```
 - Install
-```
-npm install
-```
+    ```
+    npm install
+    ```
 - Run
-```
-npm start
-```
-then go to [http://localhost:3000/](http://localhost:3000/) to see your progress
+    ```
+    npm start
+    ```
+    then go to [http://localhost:3000/](http://localhost:3000/) to see your progress
 - Build
-```
-npm run build
-```
-build files will be located at `dist` directory/folder
+    ```
+    npm run build
+    ```
+    build files will be located at `dist` directory/folder
+
+- Unit Testing
+    ```
+    npm test
+    ```
 
 # Learn
 To learn more about Inferno and Milligram here's their official documentations
-- [Inferno documentation](https://infernojs.org/docs/)
-- [Milligram documentation](http://milligram.io/#getting-started)
+- [Inferno](https://infernojs.org/docs/)
+- [Milligram](http://milligram.io/#getting-started)
+- [ChaiJS](http://chaijs.com/guide/)
+- [MochaJS](https://mochajs.org/#table-of-contents)
+- [SinonJS](http://sinonjs.org)
 
 # TODO
-- Add unit testing
 - Add UI/E2E testing
 
 # Finally
