@@ -16,7 +16,7 @@ var config = {
     devtool: isProd ? "source-map" : "eval-source-map",
 
     resolve: {
-        "extensions": [".js", ".json", ".css", ".html"]
+        "extensions": [".js", ".jsx", ".json", ".css", ".html"]
     },
     
     entry: {
@@ -24,18 +24,17 @@ var config = {
         "styles": ["./src/styles.css"]
     },
     
-    
     output: {
-        path: isProd ? path.join(process.cwd(), "dist") : path.join(process.cwd(), "dist-dev"),
-        filename: "[name].[hash].js"
+        "path": isProd ? path.join(process.cwd(), "dist") : path.join(process.cwd(), "dist-dev"),
+        "filename": "[name].js?[hash]"
     },
-    
+
     module: {
-        loaders: [
+        "rules": [
             {
-              test: /\.js$/,
-              loader: "babel-loader",
-              exclude: /node_modules/
+              "test": /\.js$/,
+              "loader": "buble-loader",
+              "exclude": /node_modules/
             },
             {
                 "test": /\.css$/,
@@ -56,14 +55,14 @@ var config = {
         new ExtractTextPlugin("vendor.[hash].css"),
 
         new HtmlWebpackPlugin({
-            template: "./index.html",
-            filename: "index.html",
-            inject: "body"
+            "template": "./index.html",
+            "filename": "index.html",
+            "inject": "body"
         }),
       
         new CopyWebpackPlugin([{
-            from: "./src/assets",
-            to: "assets"
+            "from": "./src/assets",
+            "to": "assets"
         }]),
     ]
 };

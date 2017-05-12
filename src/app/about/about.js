@@ -1,9 +1,9 @@
-import Inferno from 'inferno';
-import Component from 'inferno-component';
-import { Link } from 'inferno-router';
+import Inferno from "inferno";
+import Component from "inferno-component";
+import { Link } from "inferno-router";
 
 
-export default class AboutComponent extends Component {
+export class AboutComponent extends Component {
   constructor(props) {
     super(props);
   }

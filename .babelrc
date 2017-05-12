@@ -1,3 +1,7 @@
+/**
+ * in case you wanted to use Babel instead of Bublé uncomment the below configurations
+ */
+
 {
     "presets":[
         "es2015"

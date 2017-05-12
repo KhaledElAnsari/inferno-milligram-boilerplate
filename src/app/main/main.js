@@ -1,15 +1,19 @@
-import Inferno from 'inferno';
-import Component from 'inferno-component';
-import { Link } from 'inferno-router';
+import Inferno from "inferno";
+import Component from "inferno-component";
+import { Link } from "inferno-router";
 
 
-export default class MainComponent extends Component {
+export class MainComponent extends Component {
   constructor(props) {
     super(props);
 
     this.divstyle = {
-      width: '100%'
+      width: "100%"
     }
+  }
+
+  testAlert() {
+    window.alert("Hey!");
   }
     
   render() {
