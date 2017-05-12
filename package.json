@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "a lightweight minimal boilerplate using Inferno JS and Milligram CSS",
   "author": "Khaled Al-Ansari <khaledelansari@gmail.com>",
-  "main": "",
+  "main": "dist/index.js",
+  "web": "dist/index.js",
+  "module": "src/index.js",
   "scripts": {
     "clean": "rimraf ./dist",
     "clean:dev": "rimraf ./dist-dev",
@@ -23,6 +25,7 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-plugin-inferno": "^3.2.0",
+    "babel-preset-env": "^1.4.0",
     "babel-preset-es2015": "^6.24.1",
     "buble": "^0.15.2",
     "buble-loader": "^0.4.1",
