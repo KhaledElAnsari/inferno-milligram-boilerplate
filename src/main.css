@@ -2,8 +2,25 @@
 your css goes here
 */
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0;
+    min-height: 100%;
+}
+
+.github-corner svg {
+    z-index: 999;
+}
+
+#app {
+    height: 100%;
+}
+
+#app > .container {
+    height: 100%;
 }
 
 .logo img {
@@ -17,4 +34,13 @@ body {
 .header {
     background: #f1f1f1;
     padding: 2rem 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 2em;
 }

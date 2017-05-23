@@ -29,6 +29,12 @@ export class MainComponent extends Component {
           <div style={this.divstyle}>Welcome to your modern minimal boilerplate</div>
         </div>
         { this.props.children }
+
+        <footer>
+          This website is hosted by <a href="http://surge.sh" target="_blank">Surge.sh</a>
+          <br />
+          Prepared by <a href="https://twitter.com/KhaledElAnsari" target="_blank">Khaled Al-Ansari</a>
+        </footer>
       </div>
     );
   }
