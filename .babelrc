@@ -1,5 +1,6 @@
 /**
- * in case you wanted to use Babel instead of Bublé uncomment the below configurations
+ * This is mainly used for the testing environment, and in case you wanted to use Babel instead of Bublé
+ * replace `buble-loader` with `babel-loader` and babel will use this file for transpiler's configurations
  */
 
 {

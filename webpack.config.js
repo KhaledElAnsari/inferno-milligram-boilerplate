@@ -46,6 +46,9 @@ var config = {
                             "minimize": isProd
                         }
                     },
+                    {
+                        "loader": "postcss-loader"
+                    }
                 ])
             },
         ]

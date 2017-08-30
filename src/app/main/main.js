@@ -1,19 +1,16 @@
 import Inferno from "inferno";
 import Component from "inferno-component";
-import { Link } from "inferno-router";
 
 
 export class MainComponent extends Component {
   constructor(props) {
     super(props);
 
-    this.divstyle = {
-      width: "100%"
-    }
-  }
-
-  testAlert() {
-    window.alert("Hey!");
+    this.styles = {
+      welcome: {
+        width: "100%"
+      }
+    };
   }
     
   render() {
@@ -26,14 +23,14 @@ export class MainComponent extends Component {
           </div>
         </div>
         <div class="row header text-center">
-          <div style={this.divstyle}>Welcome to your modern minimal boilerplate</div>
+          <div style={ this.styles.welcome }>Welcome to your modern minimal boilerplate</div>
         </div>
         { this.props.children }
 
         <footer>
-          This website is hosted by <a href="http://surge.sh" target="_blank">Surge.sh</a>
+          This website is hosted by <a href="http://surge.sh" target="_blank">{ this.props.host }</a>
           <br />
-          Prepared by <a href="https://twitter.com/KhaledElAnsari" target="_blank">Khaled Al-Ansari</a>
+          Prepared by <a href="https://twitter.com/KhaledElAnsari" target="_blank">{ this.props.owner }</a>
         </footer>
       </div>
     );
