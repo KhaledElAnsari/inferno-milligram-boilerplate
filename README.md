@@ -37,5 +37,8 @@ To learn more about Inferno and Milligram here's their official documentations
 # TODO
 - Add UI/E2E testing
 
-# Finally
+# Contribution
 Any suggestion/contribution is welcomed, happy coding!.
+
+# License
+This project is under MIT License
