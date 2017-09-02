@@ -7,10 +7,11 @@
   "web": "dist/index.js",
   "module": "src/index.js",
   "scripts": {
+    "build": "npm run build:dev && npm run build:prod",
+    "build:prod": "npm run clean && webpack --progress --profile --bail",
+    "build:dev": "npm run clean:dev && webpack --progress --profile",
     "clean": "rimraf ./dist",
     "clean:dev": "rimraf ./dist-dev",
-    "build": "npm run clean && webpack --progress --profile --bail",
-    "build:dev": "npm run clean:dev && webpack --progress --profile",
     "start": "webpack-dev-server --host 0.0.0.0 --port=3000",
     "test": "rimraf .tmp && mocha --require ./mocha.shim.js --compilers js:babel-register ./src/**/*.test.*"
   },
@@ -22,6 +23,7 @@
     "milligram": "^1.3.0"
   },
   "devDependencies": {
+    "assets-webpack-plugin": "^3.5.1",
     "autoprefixer": "^7.1.3",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",

@@ -6,27 +6,32 @@ const CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const AssetsPlugin = require("assets-webpack-plugin");
 
 // Environment variables
 const ENV = process.env.npm_lifecycle_event;
-const isProd = ENV === "build";
+const isProd = ENV === "build:prod";
 
 
 var config = {
     devtool: isProd ? "source-map" : "eval-source-map",
 
     resolve: {
-        "extensions": [".js", ".jsx", ".json", ".css", ".html"]
+        "extensions": [".js", ".jsx", ".json", ".css", ".html"],
+        "modules": ["./node_modules", "./src"]
     },
     
     entry: {
         "app": ["./src/app/app.js"],
+        "vendors": ["./src/vendors.js"],
+        "polyfills": ["./src/polyfills.js"],
         "styles": ["./src/styles.css"]
     },
     
     output: {
         "path": isProd ? path.join(process.cwd(), "dist") : path.join(process.cwd(), "dist-dev"),
-        "filename": "[name].js?[hash]"
+        "filename": "[name].[hash].js",
+        "chunkFilename": "[hash].[name].js"
     },
 
     module: {
@@ -57,10 +62,20 @@ var config = {
     plugins: [
         new ExtractTextPlugin("vendor.[hash].css"),
 
+        new CommonsChunkPlugin({
+            name: ["app", "vendors", "polyfills"]
+        }),
+
         new HtmlWebpackPlugin({
             "template": "./index.html",
             "filename": "index.html",
             "inject": "body"
+        }),
+
+        new AssetsPlugin({
+            path: path.join(process.cwd(), "dist"),
+            filename: 'webpack-assets.json',
+            prettyPrint: true
         }),
       
         new CopyWebpackPlugin([{
