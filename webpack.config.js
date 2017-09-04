@@ -82,7 +82,12 @@ var config = {
             "from": "./src/assets",
             "to": "assets"
         }]),
-    ]
+    ],
+
+    devServer: {
+        historyApiFallback: true,
+        stats: "minimal"
+    }
 };
 
 if(isProd) {
